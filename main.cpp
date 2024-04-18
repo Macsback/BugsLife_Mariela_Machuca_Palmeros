@@ -1,11 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <utility>
+
+#include "Crawler.h"
+#include "Hopper.h"
+#include "Bug.h"
 using namespace std;
 
 void initiateBugs (ifstream&);
 int main() {
-
+ pair p1(1,3);
+ Crawler bug1;
+ Hopper bug2;
     
    /* ifstream fin("bugs.txt");
     if(fin)                     // ensures the file input stream is opened correctly

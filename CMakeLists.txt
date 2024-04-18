@@ -8,4 +8,5 @@ add_executable(BugsLife_CA2_Mariela_Machuca_Palmeros main.cpp
         Bug.cpp
         Hopper.h
         Crawler.h
-        Crawler.cpp)
+        Crawler.cpp
+        Hopper.cpp)

@@ -1,14 +1,5 @@
 # ninja log v5
-1	505	1712925068780550648	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o	1c89de3ebdd4c276
-0	515	1712925068791629931	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o	c45d58440e924b6f
-515	648	1712925068924698157	BugsLife_CA2_Mariela_Machuca_Palmeros	2ec2d28a1857d585
-2	451	1713438363824333613	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o	9fb24a9a4bea30d9
 2	571	1713438363824334696	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o	1c89de3ebdd4c276
-1	1401	1713438363878939203	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o	c45d58440e924b6f
-1401	1514	1713438364889461497	BugsLife_CA2_Mariela_Machuca_Palmeros	af977fe625fd85da
-2	330	1713438589154684334	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o	c45d58440e924b6f
-330	358	1713438589184332483	BugsLife_CA2_Mariela_Machuca_Palmeros	af977fe625fd85da
-2	464	1713438876468687385	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o	c45d58440e924b6f
-465	553	1713438876558816071	BugsLife_CA2_Mariela_Machuca_Palmeros	af977fe625fd85da
 2	331	1713439080595488407	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o	c45d58440e924b6f
+2	451	1713438363824333613	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o	9fb24a9a4bea30d9
 333	363	1713439080629532474	BugsLife_CA2_Mariela_Machuca_Palmeros	af977fe625fd85da
