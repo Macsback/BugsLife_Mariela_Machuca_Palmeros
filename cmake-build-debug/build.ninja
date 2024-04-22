@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_BugsLife_CA2_Mariela_Machuca_Palmeros: p
 
 build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o: CXX_COMPILER__BugsLife_CA2_Mariela_Machuca_Palmeros_unscanned_Debug /Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros/main.cpp || cmake_object_order_depends_target_BugsLife_CA2_Mariela_Machuca_Palmeros
   DEP_FILE = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   OBJECT_FILE_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   TARGET_COMPILE_PDB = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/
@@ -59,7 +59,7 @@ build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o: CXX_COMPI
 
 build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o: CXX_COMPILER__BugsLife_CA2_Mariela_Machuca_Palmeros_unscanned_Debug /Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros/Bug.cpp || cmake_object_order_depends_target_BugsLife_CA2_Mariela_Machuca_Palmeros
   DEP_FILE = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   OBJECT_FILE_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   TARGET_COMPILE_PDB = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/
@@ -67,7 +67,7 @@ build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o: CXX_COMPIL
 
 build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o: CXX_COMPILER__BugsLife_CA2_Mariela_Machuca_Palmeros_unscanned_Debug /Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros/Crawler.cpp || cmake_object_order_depends_target_BugsLife_CA2_Mariela_Machuca_Palmeros
   DEP_FILE = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   OBJECT_FILE_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   TARGET_COMPILE_PDB = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/
@@ -75,7 +75,7 @@ build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o: CXX_CO
 
 build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Hopper.cpp.o: CXX_COMPILER__BugsLife_CA2_Mariela_Machuca_Palmeros_unscanned_Debug /Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros/Hopper.cpp || cmake_object_order_depends_target_BugsLife_CA2_Mariela_Machuca_Palmeros
   DEP_FILE = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Hopper.cpp.o.d
-  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   OBJECT_FILE_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   TARGET_COMPILE_PDB = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/
@@ -90,7 +90,7 @@ build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Hopper.cpp.o: CXX_COM
 # Link the executable BugsLife_CA2_Mariela_Machuca_Palmeros
 
 build BugsLife_CA2_Mariela_Machuca_Palmeros: CXX_EXECUTABLE_LINKER__BugsLife_CA2_Mariela_Machuca_Palmeros_Debug CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Hopper.cpp.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   POST_BUILD = :
   PRE_LINK = :
