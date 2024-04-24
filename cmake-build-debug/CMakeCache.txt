@@ -17,11 +17,17 @@
 //Value Computed by CMake
 BugsLife_CA2_Mariela_Machuca_Palmeros_BINARY_DIR:STATIC=/Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros/cmake-build-debug
 
+//The directory containing a CMake configuration file for BugsLife_CA2_Mariela_Machuca_Palmeros.
+BugsLife_CA2_Mariela_Machuca_Palmeros_DIR:PATH=BugsLife_CA2_Mariela_Machuca_Palmeros_DIR-NOTFOUND
+
 //Value Computed by CMake
 BugsLife_CA2_Mariela_Machuca_Palmeros_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 BugsLife_CA2_Mariela_Machuca_Palmeros_SOURCE_DIR:STATIC=/Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros
+
+//The directory containing a CMake configuration file for BugsLife_Mariela_Machuca_Palmeros.
+BugsLife_Mariela_Machuca_Palmeros_DIR:PATH=BugsLife_Mariela_Machuca_Palmeros_DIR-NOTFOUND
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
@@ -221,6 +227,9 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+
+//Path to a file.
+SFML_DOC_DIR:PATH=/opt/homebrew/share/doc/SFML
 
 
 ########################

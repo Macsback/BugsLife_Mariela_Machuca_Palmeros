@@ -8,9 +8,13 @@
 #include "Bug.h"
 
 class Hopper: public Bug{
-private:
+protected:
     int hopLength;
 
     void move();
+    bool isWayBlocked();
+
+public:
+    Hopper(int id, int x, int y, int direction, int size, char type, int hopLength);
 };
 #endif //BUGSLIFE_CA2_MARIELA_MACHUCA_PALMEROS_HOPPER_H

@@ -7,33 +7,8 @@
 
 using namespace std;
 
-bool Bug::isWayBlocked() {
-// 1.- North 2.- East (right) 3.- South 4.- West (Left)
-// Position(X,Y)
-
-    //North
-    if(position.second== 0 && direction == 1){
-        return true;
-    }
-
-    //East
-    if(position.first== 10 && direction == 2){
-        return true;
-    }
-
-    //South
-    if(position.second== 10 && direction == 3){
-        return true;
-    }
-
-    //West
-    if(position.first== 0 && direction == 4){
-        return true;
-    }
-
-        return false;
-
-}
+Bug::Bug(int id, int x, int y, int direction, int size, char type)
+        : id(id),position(make_pair(x,y)),direction(direction), size(size), alive(true), type(type) {}
 
 
 bool Bug::isAlive(){
@@ -76,6 +51,14 @@ int Bug::getSize() const {
 }
 void Bug::setSize(int size) {
     this ->size = size;
+}
+
+
+//Type
+
+char Bug::getType() const
+{
+    return type;
 }
 
 /*bool Bug::isAlive() const {

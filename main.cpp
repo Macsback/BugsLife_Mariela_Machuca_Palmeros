@@ -1,15 +1,25 @@
 #include <iostream>
 #include <fstream>
 #include <utility>
-
+#include <string>       // getline(), stoi(), stod()
+#include <sstream>      // string stream
 #include "Crawler.h"
 #include "Hopper.h"
 #include "Bug.h"
+#include "Board.h"
+
 using namespace std;
 
 void initiateBugs (ifstream&);
 int main() {
- pair p1(1,3);
+
+    Board board;
+
+    board.initializeBug();
+    board.displayAllBugs();
+    cout << endl;
+  //  board.displayAllCells();
+ /*pair p1(1,3);
  Crawler bug1;
  Hopper bug2;
     
