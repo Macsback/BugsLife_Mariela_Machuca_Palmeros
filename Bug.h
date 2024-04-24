@@ -13,18 +13,20 @@ protected:
     std::pair<int, int> position;
     int direction;
     int size;
+    char type;
     bool alive;
     std::list<std::pair<int,int>> path;
 
-
+public:
     //Constructor
-    Bug(int id, int x, int y, int direction, int size);
+    Bug(int id, int x, int y, int direction, int size,  char type);
+
 
 int getId() const;
 void setId(int id);
 
 std::pair<int, int> getPosition() const;
-void setPosition(const std::pair<int, int> &position);
+void setPosition(const std::pair<int, int> &position); //Is it necessary?
 
 int getDirection() const;
 void setDirection(int direction);
@@ -32,6 +34,7 @@ void setDirection(int direction);
 int getSize() const;
 void setSize(int size);
 
+char getType() const;
 /*bool isAlive() const;
 */
 void setAlive(bool alive);
@@ -40,7 +43,7 @@ std::list<std::pair<int, int>> getPath() const;
 void addToPath(int x, int y);
 
 virtual void move() =0;
-bool isWayBlocked();
+virtual bool isWayBlocked() =0;
     bool isAlive();
     void Death();
 };
