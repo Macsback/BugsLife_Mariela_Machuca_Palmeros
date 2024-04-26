@@ -11,7 +11,7 @@ Bug::Bug(int id, int x, int y, int direction, int size, char type)
         : id(id),position(make_pair(x,y)),direction(direction), size(size), alive(true), type(type) {}
 
 
-bool Bug::isAlive(){
+bool Bug::isAlive() const{
     return alive;
 }
 
@@ -105,13 +105,35 @@ void Bug::addToPath(int x, int y) {
     path.push_back(make_pair(x,y));
 }
 
-bool Bug::operator== (Bug const& obj) const{
-pair properBugPosition = this->getPosition();
-pair otherBugPosition = obj.getPosition();
-    if (properBugPosition == otherBugPosition ){
+/*bool Bug::operator== (Bug const& bug2) const{
+    cout<<"is working";
+    if(this->getPosition() == bug2.getPosition())
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
+    }
+}*/
+
+void Bug::eat(Bug &bug2) {
+    bug2.alive = true;
+cout<<"eat was triggered";
+    if(bug2.isAlive()){
+        cout<< "Compare alive: Works!"<< endl;
+        int bug1Size = getSize();
+        int bug2Size = 3;
+        if(bug1Size > bug2Size){
+            bug2.Death();
+            if(!bug2.isAlive()){
+                cout<<"Bug is dead";
+            }
+
+           bug1Size = bug1Size+bug2Size;
+           setSize(bug1Size);
+        } else{
+            Death();
+        }
     }
 }

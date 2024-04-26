@@ -44,10 +44,11 @@ void addToPath(int x, int y);
 
 virtual void move() =0;
  bool isWayBlocked() ;
-    bool isAlive();
+    bool isAlive() const;
     void Death();
+    void eat(Bug &bug2);
 
-    bool operator== (Bug const& obj) const;
+   // bool operator== (Bug const& bug2) const;
 };
 
 #endif //BUGSLIFE_CA2_MARIELA_MACHUCA_PALMEROS_BUG_H

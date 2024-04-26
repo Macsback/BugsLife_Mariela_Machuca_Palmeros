@@ -16,6 +16,7 @@ int main() {
     Board board;
 
     board.initializeBug();
+    board.displayAllCells();
     menu(board);
 int selection;
 /*
@@ -46,6 +47,7 @@ void menu(Board& board){
     int request;
 
     bool exit = false;
+
 
     while(!exit) {
 
@@ -88,6 +90,6 @@ void menu(Board& board){
     }
 };
 
-//TODO fix Display Life History of all bugs so it shows initial cell, Eat functionality, Run Simulation, New Bug Type (Slimy Mac Bug), Implement a GUI
+//TODO New Bug Type (Mac Bug), Implement a GUI
 
 
