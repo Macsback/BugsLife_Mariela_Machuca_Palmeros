@@ -1,36 +1,36 @@
-101 Crawler (3,8) 8 South Alive
+101 Crawler (3,9) 8 South Alive
 life history of bug:
-101 Crawler (3,7) (3,8) 
+101 Crawler (3,7) (3,8) (3,9) 
 
-102 Hopper (5,0) 8 West Alive
+102 Hopper (3,0) 8 West Alive
 life history of bug:
-102 Hopper (7,0) (5,0) 
+102 Hopper (7,0) (5,0) (3,0) 
 
-103 Crawler (9,7) 5 North Alive
+103 Crawler (9,6) 5 North Alive
 life history of bug:
-103 Crawler (9,8) (9,7) 
+103 Crawler (9,8) (9,7) (9,6) 
 
-104 Crawler (0,7) 14 North Alive
+104 Crawler (0,6) 14 North Alive
 life history of bug:
-104 Crawler (0,8) (0,7) 
+104 Crawler (0,8) (0,7) (0,6) 
 
-105 Crawler (2,9) 8 East Alive
+105 Crawler (1,9) 8 East Dead
 life history of bug:
-105 Crawler (1,9) (2,9) 
+105 Crawler (1,9) 
 
-106 Hopper (0,0) 8 North Alive
+106 Hopper (0,2) 8 South Alive
 life history of bug:
-106 Hopper (0,2) (0,0) 
+106 Hopper (0,2) (0,0) (0,2) 
 
-107 Crawler (0,8) 11 North Alive
+107 Crawler (0,7) 11 North Alive
 life history of bug:
-107 Crawler (0,9) (0,8) 
+107 Crawler (0,9) (0,8) (0,7) 
 
-108 Crawler (1,9) 3 East Alive
+108 Crawler (1,9) 3 East Dead
 life history of bug:
 108 Crawler (0,9) (1,9) 
 
-109 Mac (0,7) 3 North Alive
+109 Mac (0,7) 3 North Dead
 life history of bug:
 109 Mac (0,8) (0,7) 
 

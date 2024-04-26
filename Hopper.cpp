@@ -11,35 +11,35 @@ Hopper::Hopper(int id, int x, int y, int direction, int size, char type, int hop
 {
 
 }
-void Hopper::move(){
+void Hopper::move() {
 // 1.- North 2.- East (right) 3.- South 4.- West (Left)
-    while(isWayBlocked())
-    {
-        direction = (rand()%4)+1;
-    }
+    if (isAlive()) {
+        while (isWayBlocked()) {
+            direction = (rand() % 4) + 1;
+        }
         switch (direction) {
             case 1: //North moves in Y up (Less)
-                position.second = position.second -hopLength;
-                position.second = position.second<0?0:position.second;
+                position.second = position.second - hopLength;
+                position.second = position.second < 0 ? 0 : position.second;
                 break;
             case 2: //East moves in X right (more)
-                position.first = position.first +hopLength;
-                position.first = position.first>9?9:position.first;
+                position.first = position.first + hopLength;
+                position.first = position.first > 9 ? 9 : position.first;
                 break;
             case 3: //South moves in Y down (more)
-                position.second = position.second +hopLength;
-                position.second = position.second>9?9:position.second;
+                position.second = position.second + hopLength;
+                position.second = position.second > 9 ? 9 : position.second;
                 break;
             case 4: //West moves in X left (less)
-                position.first = position.first -hopLength;
-                position.first = position.first<0?0:position.first;
+                position.first = position.first - hopLength;
+                position.first = position.first < 0 ? 0 : position.first;
                 break;
         }
 
-    addToPath(getPosition().first, getPosition().second);
+        addToPath(getPosition().first, getPosition().second);
     }
 
-
+}
 
 /*
 
