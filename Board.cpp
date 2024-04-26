@@ -5,6 +5,7 @@
 
 #include "Board.h"
 #include "Bug.h"
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -142,7 +143,11 @@ y = stoi(strTemp);
      hopLength = stoi(strTemp);
      bugVector.push_back(new Hopper(id, x, y, direction, size, char_array[0],hopLength));
  }
+ else if(type == "M")
+ {
 
+     bugVector.push_back(new Mac(id, x, y, direction, size, char_array[0]));
+ }
    // cout << "type: " << type << " id: " << id << " x: " << x << " y: " << y << " direction: " << direction << " hopLength: " << hopLength << endl;
 
 }
@@ -160,6 +165,10 @@ void Board::displayAllBugs()
         else if(bug->getType() =='H')
         {
             cout << " Hopper ";
+        }
+        else if(bug->getType() =='M')
+        {
+            cout << " Mac ";
         }
         cout << "(" << bug->getPosition().first << "," << bug->getPosition().second << ") ";
         cout << bug->getSize();
@@ -200,7 +209,13 @@ void Board::findBug(){
        bugFound = true;
             cout <<  bug->getId() << " ";
 
-            cout << (dynamic_cast<Crawler*>(bug) ? "Crawler" : "Hopper") << " ";
+            if (dynamic_cast<Crawler*>(bug)) {
+                cout << "Crawler ";
+            } else if (dynamic_cast<Hopper*>(bug)){
+                cout << "Hopper ";
+            }else{
+                cout << "Mac ";
+            }
             cout << "(" << bug->getPosition().first << "," << bug->getPosition().second << ") ";
             cout << bug->getSize();
             switch (bug->getDirection())
@@ -257,7 +272,15 @@ void Board::displayAllCells()
                     {
                         cout << ", ";
                     }
-                    cout << (dynamic_cast<Crawler *>(bug) ? "Crawler" : "Hopper") << " " << bug->getId()<<" ";
+                    if (dynamic_cast<Crawler*>(bug)) {
+                        cout << "Crawler ";
+                    } else if (dynamic_cast<Hopper*>(bug)){
+                        cout << "Hopper ";
+                    }
+                    else{
+                        cout << "Mac ";
+                    }
+                    cout << bug->getId() << " ";
                     if(bug->isAlive()){
                         cout<<"Alive";
                     } else{
@@ -335,6 +358,10 @@ void Board::exit() {
             {
                 fout << " Hopper ";
             }
+            else if(bug->getType() =='M')
+            {
+                fout << " Mac ";
+            }
             fout << "(" << bug->getPosition().first << "," << bug->getPosition().second << ") ";
             fout << bug->getSize();
             switch (bug->getDirection())
@@ -365,6 +392,10 @@ void Board::exit() {
             else if(bug->getType() =='H')
             {
                 fout << " Hopper ";
+            }
+            else if(bug->getType() =='M')
+            {
+                fout << " Mac ";
             }
 
 
@@ -404,7 +435,8 @@ void Board::tap()
         {
            cellVector = cells[{x,y}];
            if(cellVector.size() > 1){
-               cellVector[0]->eat(reinterpret_cast<Bug &>(cellVector[1]));
+               Bug* bug2 = cellVector[1];
+               cellVector[0]->eat(reinterpret_cast<Bug &>(bug2));
            }
         }
 
@@ -434,9 +466,13 @@ void Board::displayLifeHistory()
         {
             cout << " Crawler ";
         }
-        else if(bug->getType() =='H')
+        if(bug->getType() =='H')
         {
             cout << " Hopper ";
+        }
+         if(bug->getType() =='M')
+        {
+            cout << " Mac ";
         }
 
 
