@@ -90,6 +90,6 @@ void menu(Board& board){
     }
 };
 
-//TODO New Bug Type (Mac Bug), Implement a GUI
+//TODO Implement a GUI
 
 

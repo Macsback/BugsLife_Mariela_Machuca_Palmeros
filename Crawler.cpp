@@ -15,6 +15,7 @@ Crawler::Crawler(int id, int x, int y, int direction, int size, char type)
 
 void Crawler::move(){
 // 1.- North 2.- East (right) 3.- South 4.- West (Left)
+if(isAlive()){
     while(isWayBlocked())
     {
         direction = (rand() % 4)+1;
@@ -34,7 +35,7 @@ void Crawler::move(){
                 break;
         }
     addToPath(getPosition().first, getPosition().second);
-    }
+    }}
 
 
 

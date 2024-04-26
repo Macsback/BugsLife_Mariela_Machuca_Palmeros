@@ -436,7 +436,7 @@ void Board::tap()
            cellVector = cells[{x,y}];
            if(cellVector.size() > 1){
                Bug* bug2 = cellVector[1];
-               cellVector[0]->eat(reinterpret_cast<Bug &>(bug2));
+               cellVector[0]->eat(bug2);
            }
         }
 

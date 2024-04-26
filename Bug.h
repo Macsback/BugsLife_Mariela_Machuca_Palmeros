@@ -46,7 +46,7 @@ virtual void move() =0;
  bool isWayBlocked() ;
     bool isAlive() const;
     void Death();
-    void eat(Bug &bug2);
+    void eat(Bug *bug2);
 
    // bool operator== (Bug const& bug2) const;
 };

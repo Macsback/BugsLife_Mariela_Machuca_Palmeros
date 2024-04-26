@@ -16,6 +16,7 @@ Mac::Mac(int id, int x, int y, int direction, int size, char type)
 
 void Mac::move(){
 // 1.- North 2.- East (right) 3.- South 4.- West (Left)
+if(isAlive()){
     if(isWayBlocked())
     {
         Death();
@@ -36,4 +37,4 @@ void Mac::move(){
             break;
     }
     addToPath(getPosition().first, getPosition().second);}
-}
+}}
