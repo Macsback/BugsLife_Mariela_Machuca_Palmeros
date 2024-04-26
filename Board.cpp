@@ -257,8 +257,13 @@ void Board::displayAllCells()
                     {
                         cout << ", ";
                     }
-                    cout << (dynamic_cast<Crawler *>(bug) ? "Crawler" : "Hopper") << " " << bug->getId();
-
+                    cout << (dynamic_cast<Crawler *>(bug) ? "Crawler" : "Hopper") << " " << bug->getId()<<" ";
+                    if(bug->isAlive()){
+                        cout<<"Alive";
+                    } else{
+                        cout<< "Dead";
+                    }
+                   // cout << (bug->isAlive() ? "Alive" : "Dead");
                     firstBug = false;
                 }
                 cout << endl;
@@ -297,7 +302,8 @@ void Board::updateCells()
     pair<int,int> position = bug->getPosition();
     int x = position.first;
     int y = position.second;
-        cells[{x,y}].push_back(bug); //finds the cell with the key and pushes bug into vector with that key
+    if(bug->isAlive()){
+        cells[{x,y}].push_back(bug); }//finds the cell with the key and pushes bug into vector with that key
     }
 
   /*for (int y = 0; y < 10; ++y) //rows
@@ -381,10 +387,38 @@ void Board::exit() {
 
 void Board::tap()
 {
-    for(Bug* bug : bugVector)
+//move Bug
+    for(Bug* bug1 : bugVector)
     {
-        bug->move();
+        bug1->move();
+
     }
+
+    //fight
+updateCells();
+    vector<Bug*> cellVector;
+    for (int y = 0; y < 10; ++y) //rows
+    {
+        for (int x = 0; x < 10; ++x) //columns
+        {
+           cellVector = cells[{x,y}];
+           if(cellVector.size() > 1){
+               cellVector[0]->eat(reinterpret_cast<Bug &>(cellVector[1]));
+           }
+        }
+
+    }
+
+  /*  for(Bug* bug1 : bugVector)
+    {
+    for(Bug* bug2 : bugVector)
+    {
+
+        if(bug1->getPosition() == bug2->getPosition()){
+            bug1->eat(reinterpret_cast<Bug &>(bug2));
+        }
+    }
+        }*/
 }
 
 

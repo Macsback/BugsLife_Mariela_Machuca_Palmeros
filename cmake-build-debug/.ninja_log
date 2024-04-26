@@ -1,14 +1,15 @@
 # ninja log v5
-0	5	0	clean	ad90e366ad70d77b
-2	270	1714045196947357920	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Hopper.cpp.o	56edbe1fd9e6dce1
-2	401	1714119766097899918	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o	1c48499b2fd12545
-2	615	1714119640747047387	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o	5908b59aa554f203
-402	430	1714119766127937722	BugsLife_CA2_Mariela_Machuca_Palmeros	259a8b6c303df1b3
-0	43	1714121264367291711	build.ninja	2565a9f121e9aa9d
-2	537	1714119640669942254	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o	3b7e4a1b137060cf
-3	534	1714119640665509509	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o	5d358150cf14d7d6
 3	129	1714122403258352980	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Cell.cpp.o	7a7d513a728722c6
-3	636	1714122403764061295	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o	1c48499b2fd12545
-636	731	1714122403860531799	BugsLife_CA2_Mariela_Machuca_Palmeros	374fccc673c72b70
-2	489	1714122786224322434	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o	1c48499b2fd12545
-490	520	1714122786256456435	BugsLife_CA2_Mariela_Machuca_Palmeros	374fccc673c72b70
+2	304	1714125719211761092	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o	5d358150cf14d7d6
+2	305	1714125719212940044	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o	3b7e4a1b137060cf
+0	43	1714128517296419982	build.ninja	2565a9f121e9aa9d
+490	517	1714127576765390992	BugsLife_CA2_Mariela_Machuca_Palmeros	374fccc673c72b70
+2	488	1714128401972060554	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o	5908b59aa554f203
+3	394	1714128401878576549	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/MacBug.cpp.o	c68b998543e91c40
+1	420	1714128469688378754	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o	1c48499b2fd12545
+3	302	1714125719209729936	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Hopper.cpp.o	56edbe1fd9e6dce1
+0	5	0	clean	ad90e366ad70d77b
+0	52	1714128517296419982	build.ninja	2565a9f121e9aa9d
+1	422	1714128517721547771	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o	5908b59aa554f203
+2	482	1714128517781887326	CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o	1c48499b2fd12545
+482	511	1714128517812179998	BugsLife_CA2_Mariela_Machuca_Palmeros	374fccc673c72b70
