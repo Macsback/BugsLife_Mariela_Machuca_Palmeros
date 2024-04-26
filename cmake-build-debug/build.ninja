@@ -84,6 +84,13 @@ build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o: CXX_COMP
   OBJECT_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
   OBJECT_FILE_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
 
+build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Cell.cpp.o: CXX_COMPILER__BugsLife_CA2_Mariela_Machuca_Palmeros_unscanned_Debug /Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros/Cell.cpp || cmake_object_order_depends_target_BugsLife_CA2_Mariela_Machuca_Palmeros
+  DEP_FILE = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Cell.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk -fcolor-diagnostics
+  INCLUDES = -isystem /opt/homebrew/Cellar/sfml/2.6.1/include
+  OBJECT_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
+  OBJECT_FILE_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target BugsLife_CA2_Mariela_Machuca_Palmeros
@@ -92,7 +99,7 @@ build CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o: CXX_COMP
 #############################################
 # Link the executable BugsLife_CA2_Mariela_Machuca_Palmeros
 
-build BugsLife_CA2_Mariela_Machuca_Palmeros: CXX_EXECUTABLE_LINKER__BugsLife_CA2_Mariela_Machuca_Palmeros_Debug CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Hopper.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o | /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-window.2.6.1.dylib /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-system.2.6.1.dylib
+build BugsLife_CA2_Mariela_Machuca_Palmeros: CXX_EXECUTABLE_LINKER__BugsLife_CA2_Mariela_Machuca_Palmeros_Debug CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/main.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Bug.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Crawler.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Hopper.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Board.cpp.o CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir/Cell.cpp.o | /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-graphics.2.6.1.dylib /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-audio.2.6.1.dylib /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-window.2.6.1.dylib /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-system.2.6.1.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/Cellar/sfml/2.6.1/lib  /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-graphics.2.6.1.dylib  /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-audio.2.6.1.dylib  /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-window.2.6.1.dylib  /opt/homebrew/Cellar/sfml/2.6.1/lib/libsfml-system.2.6.1.dylib
   OBJECT_DIR = CMakeFiles/BugsLife_CA2_Mariela_Machuca_Palmeros.dir

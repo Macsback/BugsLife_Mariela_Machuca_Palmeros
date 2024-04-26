@@ -234,15 +234,13 @@ void Board::displayAllCells()
 {
 
 
-    //updateCells();
+    updateCells();
     for (int y = 0; y < 10; ++y) //rows
     {
         for (int x = 0; x < 10; ++x) //columns
         {
             pair<int, int> cellCoordinates = make_pair(x, y); //coordinates of the current cell
             cout << "(" << x << "," << y << "): ";
-
-
 
             auto it = cells.find(cellCoordinates);
             //no cell in the map or no bugs in the cell
@@ -293,7 +291,16 @@ void Board::displayAllCells()
 }
 void Board::updateCells()
 {
-  /*  for (int y = 0; y < 10; ++y) //rows
+    cells.clear();
+    for (Bug *bug: bugVector) {
+
+    pair<int,int> position = bug->getPosition();
+    int x = position.first;
+    int y = position.second;
+        cells[{x,y}].push_back(bug); //finds the cell with the key and pushes bug into vector with that key
+    }
+
+  /*for (int y = 0; y < 10; ++y) //rows
     {
         for (int x = 0; x < 10; ++x) //columns
         {
