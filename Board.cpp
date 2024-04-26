@@ -8,7 +8,7 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-
+#include <SFML/Graphics.hpp>
 using namespace std;
 Board::Board()
 {
@@ -97,11 +97,11 @@ void Board::parseLine(const string& strLine){
      getline(strStream, strTemp, DELIMITER);   // extract the height as a string
      x = stoi(strTemp); // convert string to double (may throw exceptions)
  }
- catch (std::invalid_argument const& e)
+ catch (invalid_argument const& e)
  {
      cout << "Bad input: std::invalid_argument thrown" << '\n';
  }
- catch (std::out_of_range const& e)
+ catch (out_of_range const& e)
  {
      cout << "Integer overflow: std::out_of_range thrown" << '\n';
  }
@@ -143,7 +143,7 @@ y = stoi(strTemp);
      bugVector.push_back(new Hopper(id, x, y, direction, size, char_array[0],hopLength));
  }
 
-    cout << "type: " << type << " id: " << id << " x: " << x << " y: " << y << " direction: " << direction << " hopLength: " << hopLength << endl;
+   // cout << "type: " << type << " id: " << id << " x: " << x << " y: " << y << " direction: " << direction << " hopLength: " << hopLength << endl;
 
 }
 
@@ -184,13 +184,55 @@ void Board::displayAllBugs()
     }
 }
 
-void Board::findBug(int bugId)
-{
+void Board::findBug(){
+    int bugId;
+    bool bugFound = false;
 
+    cout<<"What Bug are you looking for?"<< endl;
+    cin>>bugId;
+
+    for(Bug* bug : bugVector)
+    {
+
+        if(bug->getId() == bugId)
+        {
+
+       bugFound = true;
+            cout <<  bug->getId() << " ";
+
+            cout << (dynamic_cast<Crawler*>(bug) ? "Crawler" : "Hopper") << " ";
+            cout << "(" << bug->getPosition().first << "," << bug->getPosition().second << ") ";
+            cout << bug->getSize();
+            switch (bug->getDirection())
+            {
+                case 1:
+                    cout << " North ";
+                    break;
+                case 2:
+                    cout << " East ";
+                    break;
+                case 3:
+                    cout << " South ";
+                    break;
+                case 4:
+                    cout << " West ";
+                    break;
+            }
+
+            cout << (bug->isAlive() ? "Alive" : "Dead");
+            cout << endl;
+        }
+
+    }
+    if(!bugFound)
+    {
+        cout << "Bug " << bugId << " not found." << endl;
+    }
 }
 
 void Board::displayAllCells()
 {
+
 
     //updateCells();
     for (int y = 0; y < 10; ++y) //rows
@@ -200,17 +242,17 @@ void Board::displayAllCells()
             pair<int, int> cellCoordinates = make_pair(x, y); //coordinates of the current cell
             cout << "(" << x << "," << y << "): ";
 
-            //attempt to locate the current cells coordinates in the map
-            //if the cell is found, it will point to the corresponding entry
+
+
             auto it = cells.find(cellCoordinates);
             //no cell in the map or no bugs in the cell
             if (it == cells.end() || it->second.empty())
             {
-                cout << "empty" << std::endl;
+                cout << "empty" << endl;
             }
             else
             {
-                bool firstBug = true; //used just for formatting
+                bool firstBug = true;
                 for (Bug *bug: it->second)
                 {
                     if (!firstBug)
@@ -218,21 +260,116 @@ void Board::displayAllCells()
                         cout << ", ";
                     }
                     cout << (dynamic_cast<Crawler *>(bug) ? "Crawler" : "Hopper") << " " << bug->getId();
-                    //dynamic cast is used for the type conversion of polymorphic types
-                    //aka the types with at least one virtual function
-                    //checks if a pointer or reference of base class can be safely
-                    //converted to a pointer or reference to a derived class
+
                     firstBug = false;
                 }
-                cout << std::endl;
+                cout << endl;
             }
         }
     }
+
+    /*
+    sf::RenderWindow window(
+            sf::VideoMode(640, 480),
+            "Hello World");
+
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+        window.draw(shape);
+        window.display();
+    }
+     */
 }
 void Board::updateCells()
 {
+  /*  for (int y = 0; y < 10; ++y) //rows
+    {
+        for (int x = 0; x < 10; ++x) //columns
+        {
+            pair<int, int> cellCoordinates = make_pair(x, y);
+            for (Bug *bug: bugVector) {
+                if (bug->getPosition() == cellCoordinates) {
+
+                }
+            }
+        }
+    }*/
+}
+
+void Board::exit() {
+    ofstream fout("Output.txt"); // create a file output stream to Output.txt. If the file does not exist create it.
+    if(fout) // make sure the file has opened correctly
+    {
+        for(Bug* bug : bugVector)
+        {
+            fout <<  bug->getId();
+            if(bug->getType() == 'C')
+            {
+                fout << " Crawler ";
+            }
+            else if(bug->getType() =='H')
+            {
+                fout << " Hopper ";
+            }
+            fout << "(" << bug->getPosition().first << "," << bug->getPosition().second << ") ";
+            fout << bug->getSize();
+            switch (bug->getDirection())
+            {
+                case 1:
+                    fout << " North ";
+                    break;
+                case 2:
+                    fout << " East ";
+                    break;
+                case 3:
+                    fout << " South ";
+                    break;
+                case 4:
+                    fout << " West ";
+                    break;
+            }
+
+            fout << (bug->isAlive() ? "Alive" : "Dead");
+            fout << endl;
+
+            fout<<"life history of bug:"<<endl;
+            fout <<  bug->getId();
+            if(bug->getType() == 'C')
+            {
+                fout << " Crawler ";
+            }
+            else if(bug->getType() =='H')
+            {
+                fout << " Hopper ";
+            }
 
 
+            const list<pair<int, int>> &path = bug->getPath();
+
+            for (auto it = path.begin(); it != path.end(); it++){
+                fout << "(" << it->first << "," << it->second << ") ";
+            }
+
+            fout << endl;
+            fout << endl;
+        }
+        fout.close(); // close the file when we are finished.
+    }
+    else
+    {
+        cout << "Unable to open file." <<endl;
+    }
 }
 
 void Board::tap()
@@ -243,7 +380,29 @@ void Board::tap()
     }
 }
 
-void Board::displayLifeHistory(ostream& out)
-{
 
+
+void Board::displayLifeHistory()
+{
+    for(Bug* bug : bugVector)
+    {
+
+        cout <<  bug->getId();
+        if(bug->getType() == 'C')
+        {
+            cout << " Crawler ";
+        }
+        else if(bug->getType() =='H')
+        {
+            cout << " Hopper ";
+        }
+
+
+        const list<pair<int, int>> &path = bug->getPath();
+
+        for (auto it = path.begin(); it != path.end(); it++){
+            cout << "(" << it->first << "," << it->second << ") ";
+        }
+        cout << endl;
+    }
 }

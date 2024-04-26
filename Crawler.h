@@ -10,7 +10,7 @@
 class Crawler: public Bug{
 
 protected:
-    bool isWayBlocked();
+
     void move();
 
 public:

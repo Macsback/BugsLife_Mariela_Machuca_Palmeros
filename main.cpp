@@ -7,58 +7,87 @@
 #include "Hopper.h"
 #include "Bug.h"
 #include "Board.h"
-
+#include <SFML/Graphics.hpp>
 using namespace std;
 
 void initiateBugs (ifstream&);
+void menu(Board&);
 int main() {
-
     Board board;
 
     board.initializeBug();
+    menu(board);
+int selection;
+/*
+
     board.displayAllBugs();
     cout << endl;
-  //  board.displayAllCells();
- /*pair p1(1,3);
- Crawler bug1;
- Hopper bug2;
-    
-   /* ifstream fin("bugs.txt");
-    if(fin)                     // ensures the file input stream is opened correctly
-    {
-        cout << "\nBug:" << endl;
-        initiateBugs( fin );// creates a variable to store each word we read in from the file.
-    }
-    else
-    {
-        cout << "Unable to open file" <<endl;
-    }
-    fin.close();
-    */
+    board.tap();
+    board.displayAllBugs();
+    cout << endl;
+    board.tap();
+    board.displayAllBugs();
+    cout << endl;
+    board.tap();
+    board.displayAllBugs();
+    board.findBug();
+  //board.displayAllCells();
+
+*/
+
+
+
     return 0;
 
 
 }
 
-/*void initiateBugs (ifstream & ifstream1 ) {
-    char separator;
-    char type;
-    int id;
-    int x;
-    int y;
-    int direction;
-    int size;
-    int hopLength;
+void menu(Board& board){
+    int request;
 
-    while(!ifstream1.eof())     // while not at end of file
-    {
+    bool exit = false;
 
+    while(!exit) {
 
-        ifstream1 >> type >> separator >> id >> separator;
-      cout << separator << endl;
+        cout << "What would you like to do?" << endl;
+        cout << "1. Display All Bugs" << endl;
+        cout << "2. Find a Bug" << endl;
+        cout << "3. Tap the Bug Board" << endl;
+        cout << "4. Display Life History of all bugs" << endl;
+        cout << "5. Display all Cells" << endl;
+        cout << "6. Run Simulation" << endl;
+        cout << "7. Exit" << endl;
 
+        cin>> request;
+        switch (request) {
+            case 1:
+                board.displayAllBugs();
+                break;
+            case 2:
+                board.findBug();
+                break;
+            case 3:
+                board.tap();
+                break;
+            case 4:
+                cout<< "not finished"<< endl;
+                board.displayLifeHistory();
+                break;
+            case 5:
+                board.displayAllCells();
+                break;
+            case 6:
+                cout<< "not finished"<< endl;
+                break;
+            case 7:
+                board.exit();
+                exit = true;
+                break;
 
+        }
     }
-}*/
+};
+
+//TODO fix Display Life History of all bugs so it shows initial cell, Eat functionality, Run Simulation, New Bug Type (Slimy Mac Bug), Implement a GUI
 
 

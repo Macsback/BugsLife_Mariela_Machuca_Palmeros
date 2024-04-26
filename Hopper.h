@@ -12,7 +12,7 @@ protected:
     int hopLength;
 
     void move();
-    bool isWayBlocked();
+
 
 public:
     Hopper(int id, int x, int y, int direction, int size, char type, int hopLength);

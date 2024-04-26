@@ -1,0 +1,24 @@
+101 Crawler (3,9) 8 East Alive
+life history of bug:
+101 Crawler (1,9) (2,9) (3,9) 
+
+102 Hopper (9,6) 8 South Alive
+life history of bug:
+102 Hopper (9,2) (9,4) (9,6) 
+
+103 Crawler (9,6) 5 North Alive
+life history of bug:
+103 Crawler (9,8) (9,7) (9,6) 
+
+104 Crawler (0,6) 8 North Alive
+life history of bug:
+104 Crawler (0,8) (0,7) (0,6) 
+
+105 Crawler (3,9) 8 East Alive
+life history of bug:
+105 Crawler (1,9) (2,9) (3,9) 
+
+106 Hopper (2,0) 8 East Alive
+life history of bug:
+106 Hopper (0,2) (0,0) (2,0) 
+

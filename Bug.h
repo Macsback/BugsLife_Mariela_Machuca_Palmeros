@@ -43,8 +43,11 @@ std::list<std::pair<int, int>> getPath() const;
 void addToPath(int x, int y);
 
 virtual void move() =0;
-virtual bool isWayBlocked() =0;
+ bool isWayBlocked() ;
     bool isAlive();
     void Death();
+
+    bool operator== (Bug const& obj) const;
 };
+
 #endif //BUGSLIFE_CA2_MARIELA_MACHUCA_PALMEROS_BUG_H
