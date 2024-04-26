@@ -13,31 +13,35 @@ Hopper::Hopper(int id, int x, int y, int direction, int size, char type, int hop
 }
 void Hopper::move(){
 // 1.- North 2.- East (right) 3.- South 4.- West (Left)
-
-
-
-
-    if(!isWayBlocked()) {
+    while(isWayBlocked())
+    {
+        direction = (rand()%4)+1;
+    }
         switch (direction) {
             case 1: //North moves in Y up (Less)
                 position.second = position.second -hopLength;
+                position.second = position.second<0?0:position.second;
                 break;
             case 2: //East moves in X right (more)
-                position.first = position.second +hopLength;
+                position.first = position.first +hopLength;
+                position.first = position.first>9?9:position.first;
                 break;
             case 3: //South moves in Y down (more)
                 position.second = position.second +hopLength;
+                position.second = position.second>9?9:position.second;
                 break;
             case 4: //West moves in X left (less)
-                position.first = position.second -hopLength;
+                position.first = position.first -hopLength;
+                position.first = position.first<0?0:position.first;
                 break;
         }
-    }
-    else{
-        setDirection(rand() %4 +1);
+
+    addToPath(getPosition().first, getPosition().second);
     }
 
-}
+
+
+/*
 
 bool Hopper::isWayBlocked() {
 // 1.- North 2.- East (right) 3.- South 4.- West (Left)
@@ -46,7 +50,7 @@ bool Hopper::isWayBlocked() {
     switch (hopLength) {
         case 2:
             //North
-            if(position.second<= 2 && direction == 1){
+            if(position.second<= 1 && direction == 1){
 
                 return true;
             }
@@ -116,4 +120,4 @@ bool Hopper::isWayBlocked() {
 
     return false;
 
-}
+}*/

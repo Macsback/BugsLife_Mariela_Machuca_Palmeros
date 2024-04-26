@@ -26,8 +26,9 @@ public:
     void displayAllBugs();
     void displayAllCells();
     void updateCells();
-    void findBug(int bugId);
-    void displayLifeHistory(std::ostream& out);
+    void findBug();
+    void displayLifeHistory();
+    void exit();
 
     void tap();
 

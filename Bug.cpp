@@ -74,6 +74,44 @@ char Bug::getType() const
 list<pair<int, int>> Bug::getPath() const {
     return path;
 }
+bool Bug::isWayBlocked() {
+
+// 1.- North 2.- East (right) 3.- South 4.- West (Left)
+// Position(X,Y)
+
+    //North
+    if(position.second== 0 && direction == 1){
+        return true;
+    }
+
+    //East
+    if(position.first== 9 && direction == 2){
+        return true;
+    }
+
+    //South
+    if(position.second== 9 && direction == 3){
+        return true;
+    }
+
+    //West
+    if(position.first== 0 && direction == 4){
+        return true;
+    }
+
+    return false;
+}
 void Bug::addToPath(int x, int y) {
     path.push_back(make_pair(x,y));
+}
+
+bool Bug::operator== (Bug const& obj) const{
+pair properBugPosition = this->getPosition();
+pair otherBugPosition = obj.getPosition();
+    if (properBugPosition == otherBugPosition ){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
