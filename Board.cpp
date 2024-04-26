@@ -395,10 +395,11 @@ void Board::tap()
     }
 
     //fight
-updateCells();
+
     vector<Bug*> cellVector;
     for (int y = 0; y < 10; ++y) //rows
     {
+        //make pointer for bug2
         for (int x = 0; x < 10; ++x) //columns
         {
            cellVector = cells[{x,y}];
@@ -408,7 +409,7 @@ updateCells();
         }
 
     }
-
+    updateCells();
   /*  for(Bug* bug1 : bugVector)
     {
     for(Bug* bug2 : bugVector)

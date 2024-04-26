@@ -118,16 +118,22 @@ void Bug::addToPath(int x, int y) {
 }*/
 
 void Bug::eat(Bug &bug2) {
-
+    bug2.alive = true;
+cout<<"eat was triggered";
     if(bug2.isAlive()){
-        int bug1Size = this->getSize();
-        int bug2Size = bug2.getSize();
+        cout<< "Compare alive: Works!"<< endl;
+        int bug1Size = getSize();
+        int bug2Size = 3;
         if(bug1Size > bug2Size){
             bug2.Death();
+            if(!bug2.isAlive()){
+                cout<<"Bug is dead";
+            }
+
            bug1Size = bug1Size+bug2Size;
-            this->setSize(bug1Size);
+           setSize(bug1Size);
         } else{
-            this->Death();
+            Death();
         }
     }
 }

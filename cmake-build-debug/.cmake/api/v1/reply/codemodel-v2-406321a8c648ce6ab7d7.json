@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "BugsLife_CA2_Mariela_Machuca_Palmeros",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "BugsLife_CA2_Mariela_Machuca_Palmeros::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-BugsLife_CA2_Mariela_Machuca_Palmeros-Debug-433ffdd0997249d667f6.json",
+					"name" : "BugsLife_CA2_Mariela_Machuca_Palmeros",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros/cmake-build-debug",
+		"source" : "/Users/mac/Documents/GitHub/BugsLife_Mariela_Machuca_Palmeros"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
