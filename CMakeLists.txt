@@ -11,7 +11,9 @@ add_executable(BugsLife_CA2_Mariela_Machuca_Palmeros main.cpp
         Crawler.cpp
         Hopper.cpp
         Board.h
-        Board.cpp)
+        Board.cpp
+        Cell.h
+        Cell.cpp)
 
 set(SFML_DIR /opt/homebrew/Cellar/sfml/2.6.1/lib/cmake/SFML)
 
