@@ -12,36 +12,13 @@ using namespace std;
 using namespace sf;
 void initiateBugs (ifstream&);
 void menu(Board&);
-void GUI();
+//void GUI();
 void GUICreateGrid();
 int main() {
     Board board;
-//GUI();
     board.initializeBug();
-  board.displayAllCells();
- /*   board.initializeBug();
     board.displayAllCells();
-    menu(board);*/
-
-/*
-
-    board.displayAllBugs();
-    cout << endl;
-    board.tap();
-    board.displayAllBugs();
-    cout << endl;
-    board.tap();
-    board.displayAllBugs();
-    cout << endl;
-    board.tap();
-    board.displayAllBugs();
-    board.findBug();
-  //board.displayAllCells();
-
-*/
-
-
-
+   menu(board);// Delete Comment to see the rest of feature
     return 0;
 
 
@@ -54,14 +31,15 @@ void menu(Board& board){
 
 
     while(!exit) {
-
+        cout << endl;
+        cout << "You're Playing in Console mode" << endl;
         cout << "What would you like to do?" << endl;
         cout << "1. Display All Bugs" << endl;
         cout << "2. Find a Bug" << endl;
         cout << "3. Tap the Bug Board" << endl;
         cout << "4. Display Life History of all bugs" << endl;
         cout << "5. Display all Cells" << endl;
-        cout << "6. Run Simulation" << endl;
+        cout << "6. GUI Game" << endl;
         cout << "7. Exit" << endl;
 
         cin>> request;
@@ -76,14 +54,14 @@ void menu(Board& board){
                 board.tap();
                 break;
             case 4:
-                cout<< "not finished"<< endl;
+
                 board.displayLifeHistory();
                 break;
             case 5:
                 board.displayAllCells();
                 break;
             case 6:
-                cout<< "not finished"<< endl;
+                board.playGame();
                 break;
             case 7:
                 board.exit();
@@ -94,7 +72,7 @@ void menu(Board& board){
     }
 };
 
-void GUI(){
+/*void GUI(){
     RenderWindow window(VideoMode(800, 800), "SFML Grid");
 
     // Define the size of each grid cell
@@ -157,11 +135,12 @@ void GUI(){
        window.clear();
         window.draw(player);
         window.display();
-    }*/
+    }
 
 };
+*/
 
 
-//TODO Implement a GUI
+
 
 //Pretty Pink Color Color(255, 42, 97)

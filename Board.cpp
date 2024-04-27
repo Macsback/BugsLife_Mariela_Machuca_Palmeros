@@ -245,11 +245,10 @@ void Board::findBug(){
         cout << "Bug " << bugId << " not found." << endl;
     }
 }
-
-void Board::displayAllCells()
-{
-
-    RenderWindow window(VideoMode(800, 800), "SFML Grid");
+void Board::playGame(){
+    cout << "You switched to GUI Mode" << endl;
+    cout<< "Press Spacebar to tap the Board" << endl;
+    RenderWindow window(VideoMode(800, 800), "Bug's Life: Mariela Machuca Palmeros", Style::Close);
 
     // Define the size of each grid cell
     const float cellSize = 80.0f;
@@ -268,16 +267,16 @@ void Board::displayAllCells()
         while (window.pollEvent(evnt)) {
             switch (evnt.type) {
                 case Event::Closed:
-                            window.close();
-                            exit();
+                    window.close();
+                    exit();
                     break;
 
                 case sf::Event::KeyPressed:
                     tap();
                     break;
-                }
-
             }
+
+        }
 
 
         // Clear the window
@@ -287,13 +286,93 @@ void Board::displayAllCells()
         for (int i = 0; i < 10; ++i) {
             for (int j = 0; j < 10; ++j) {
                 // Alternate between cell1 and cell2 based on the cell position
-               RectangleShape& currentCell = ((i + j) % 2 == 0) ? cell1 : cell2;
+                RectangleShape& currentCell = ((i + j) % 2 == 0) ? cell1 : cell2;
                 // Set the position of the cell
                 currentCell.setPosition(i * cellSize, j * cellSize);
                 // Draw the cell
                 window.draw(currentCell);
             }
         }
+        updateCells();
+        for (int y = 0; y < 10; ++y) //rows
+        {
+            for (int x = 0; x < 10; ++x) //columns
+            {
+                pair<int, int> cellCoordinates = make_pair(x, y); //coordinates of the current cell
+
+
+                auto it = cells.find(cellCoordinates);
+                //no cell in the map or no bugs in the cell
+                if (it == cells.end() || it->second.empty())
+                {
+
+                }
+                else
+                {
+                    bool firstBug = true;
+                    for (Bug *bug: it->second)
+                    {
+
+                        CircleShape buggie;
+                        float percentageSize = bug->getSize()*5;
+                        float bugRadius = (percentageSize * 80)/100;
+
+                        float buggiePosX = ((cellCoordinates.first*80)+4) + bug->getSize();
+                        float buggiePosY = ((cellCoordinates.second*80)+4) + bug->getSize();
+
+                        if(bugRadius>40){
+                            bugRadius = 40;
+                            buggiePosX = buggiePosX - bugRadius;
+                            buggiePosY = buggiePosY - bugRadius;
+                        }
+                        buggie.setRadius(bugRadius);
+
+                        buggie.setPointCount(30);
+                        buggie.setPosition(buggiePosX, buggiePosY);
+                        if (dynamic_cast<Crawler*>(bug)) {
+                            buggie.setFillColor(Color(92,116,87));
+
+                        } else if (dynamic_cast<Hopper*>(bug)){
+                            buggie.setFillColor(Color(78,82,131));
+
+                        }
+                        else{
+                            buggie.setFillColor(Color(193,73,83));
+
+                        }
+
+                        if(bug->isAlive()){
+
+                        } else{
+
+                        }
+
+
+                        window.draw(buggie);
+                    }
+
+
+                }
+            }
+        }
+
+
+
+
+
+
+
+        // Display the window
+        window.display();
+
+
+    }
+
+}
+
+void Board::displayAllCells()
+{
+
     updateCells();
     for (int y = 0; y < 10; ++y) //rows
     {
@@ -313,32 +392,16 @@ void Board::displayAllCells()
                 bool firstBug = true;
                 for (Bug *bug: it->second)
                 {
-
-                    CircleShape buggie;
-                    float percentageSize = bug->getSize()*5;
-                    float bugRadius = (percentageSize * 80)/100;
-
-                    float buggiePosX = (cellCoordinates.first*80) + bug->getSize();
-                    float buggiePosY = (cellCoordinates.second*80) + bug->getSize();
-
-                    if(bugRadius>40){
-                        bugRadius = 40;
-                        buggiePosX = buggiePosX - bugRadius;
-                        buggiePosY = buggiePosY - bugRadius;
+                    if (!firstBug)
+                    {
+                        cout << ", ";
                     }
-                    buggie.setRadius(bugRadius);
-
-                    buggie.setPointCount(30);
-                 buggie.setPosition(buggiePosX, buggiePosY);
                     if (dynamic_cast<Crawler*>(bug)) {
-                        buggie.setFillColor(Color(92,116,87));
                         cout << "Crawler ";
                     } else if (dynamic_cast<Hopper*>(bug)){
-                        buggie.setFillColor(Color(78,82,131));
                         cout << "Hopper ";
                     }
                     else{
-                        buggie.setFillColor(Color(193,73,83));
                         cout << "Mac ";
                     }
                     cout << bug->getId() << " ";
@@ -347,27 +410,36 @@ void Board::displayAllCells()
                     } else{
                         cout<< "Dead";
                     }
-
-
-                    window.draw(buggie);
+                    // cout << (bug->isAlive() ? "Alive" : "Dead");
+                    firstBug = false;
                 }
-
                 cout << endl;
             }
         }
     }
 
+    /*
+    sf::RenderWindow window(
+            sf::VideoMode(640, 480),
+            "Hello World");
 
+    sf::CircleShape shape(100.f);
+    shape.setFillColor(sf::Color::Green);
 
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
 
-
-
-
-        // Display the window
+        window.clear();
+        window.draw(shape);
         window.display();
-
-
     }
+     */
 
 }
 void Board::updateCells()
@@ -397,7 +469,8 @@ void Board::updateCells()
 }
 
 void Board::exit() {
-    ofstream fout("Output.txt"); // create a file output stream to Output.txt. If the file does not exist create it.
+    cout << "Quitting...    Printing Life History of Bugs";
+    ofstream fout("BugsLifeHistory.txt"); // create a file output stream to Output.txt. If the file does not exist create it.
     if(fout) // make sure the file has opened correctly
     {
         for(Bug* bug : bugVector)
