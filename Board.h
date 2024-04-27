@@ -29,7 +29,7 @@ public:
     void findBug();
     void displayLifeHistory();
     void exit();
-
+   void playGame();
     void tap();
 
     Board();

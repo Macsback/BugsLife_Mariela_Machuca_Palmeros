@@ -1,0 +1,32 @@
+101 Crawler (3,6) 1 South Alive
+life history of bug:
+101 Crawler 
+
+102 Hopper (9,0) 2 North Alive
+life history of bug:
+102 Hopper 
+
+103 Crawler (9,9) 3 East Alive
+life history of bug:
+103 Crawler 
+
+104 Hopper (0,4) 4 North Alive
+life history of bug:
+104 Hopper 
+
+105 Crawler (0,8) 5 South Alive
+life history of bug:
+105 Crawler 
+
+106 Crawler (1,9) 6 West Alive
+life history of bug:
+106 Crawler 
+
+107 Mac (0,0) 7 North Alive
+life history of bug:
+107 Mac 
+
+108 Mac (4,4) 5 South Alive
+life history of bug:
+108 Mac 
+

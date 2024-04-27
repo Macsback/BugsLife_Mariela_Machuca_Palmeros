@@ -22,6 +22,7 @@ if(isAlive()){
         Death();
     }
     else{
+        direction = (rand() % 4) + 1;
     switch (direction) {
         case 1: //North moves in Y up (Less)
             position.second = position.second -1;
