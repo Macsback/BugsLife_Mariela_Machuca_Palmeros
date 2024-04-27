@@ -11,6 +11,7 @@
 #include <sstream>
 #include <SFML/Graphics.hpp>
 using namespace std;
+using namespace sf;
 Board::Board()
 {
 
@@ -248,7 +249,51 @@ void Board::findBug(){
 void Board::displayAllCells()
 {
 
+    RenderWindow window(VideoMode(800, 800), "SFML Grid");
 
+    // Define the size of each grid cell
+    const float cellSize = 80.0f;
+
+    // Create shapes to represent each type of cell
+    RectangleShape cell1(Vector2f(cellSize, cellSize));
+    cell1.setFillColor(Color(255, 232, 225));
+    RectangleShape cell2(Vector2f(cellSize, cellSize));
+    cell2.setFillColor(Color(255,196,209));
+
+    CircleShape circle;
+    // Main loop
+    while (window.isOpen()) {
+        // Event handling
+        Event evnt;
+        while (window.pollEvent(evnt)) {
+            switch (evnt.type) {
+                case Event::Closed:
+                            window.close();
+                            exit();
+                    break;
+
+                case sf::Event::KeyPressed:
+                    tap();
+                    break;
+                }
+
+            }
+
+
+        // Clear the window
+        window.clear(Color::Black);
+
+        // Draw the grid
+        for (int i = 0; i < 10; ++i) {
+            for (int j = 0; j < 10; ++j) {
+                // Alternate between cell1 and cell2 based on the cell position
+               RectangleShape& currentCell = ((i + j) % 2 == 0) ? cell1 : cell2;
+                // Set the position of the cell
+                currentCell.setPosition(i * cellSize, j * cellSize);
+                // Draw the cell
+                window.draw(currentCell);
+            }
+        }
     updateCells();
     for (int y = 0; y < 10; ++y) //rows
     {
@@ -268,16 +313,32 @@ void Board::displayAllCells()
                 bool firstBug = true;
                 for (Bug *bug: it->second)
                 {
-                    if (!firstBug)
-                    {
-                        cout << ", ";
+
+                    CircleShape buggie;
+                    float percentageSize = bug->getSize()*5;
+                    float bugRadius = (percentageSize * 80)/100;
+
+                    float buggiePosX = (cellCoordinates.first*80) + bug->getSize();
+                    float buggiePosY = (cellCoordinates.second*80) + bug->getSize();
+
+                    if(bugRadius>40){
+                        bugRadius = 40;
+                        buggiePosX = buggiePosX - bugRadius;
+                        buggiePosY = buggiePosY - bugRadius;
                     }
+                    buggie.setRadius(bugRadius);
+
+                    buggie.setPointCount(30);
+                 buggie.setPosition(buggiePosX, buggiePosY);
                     if (dynamic_cast<Crawler*>(bug)) {
+                        buggie.setFillColor(Color(92,116,87));
                         cout << "Crawler ";
                     } else if (dynamic_cast<Hopper*>(bug)){
+                        buggie.setFillColor(Color(78,82,131));
                         cout << "Hopper ";
                     }
                     else{
+                        buggie.setFillColor(Color(193,73,83));
                         cout << "Mac ";
                     }
                     cout << bug->getId() << " ";
@@ -286,36 +347,28 @@ void Board::displayAllCells()
                     } else{
                         cout<< "Dead";
                     }
-                   // cout << (bug->isAlive() ? "Alive" : "Dead");
-                    firstBug = false;
+
+
+                    window.draw(buggie);
                 }
+
                 cout << endl;
             }
         }
     }
 
-    /*
-    sf::RenderWindow window(
-            sf::VideoMode(640, 480),
-            "Hello World");
 
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
 
-        window.clear();
-        window.draw(shape);
+
+
+
+        // Display the window
         window.display();
+
+
     }
-     */
+
 }
 void Board::updateCells()
 {
@@ -484,3 +537,27 @@ void Board::displayLifeHistory()
         cout << endl;
     }
 }
+
+
+/*
+sf::RenderWindow window(
+        sf::VideoMode(640, 480),
+        "Hello World");
+
+sf::CircleShape shape(100.f);
+shape.setFillColor(sf::Color::Green);
+
+while (window.isOpen())
+{
+    sf::Event event;
+    while (window.pollEvent(event))
+    {
+        if (event.type == sf::Event::Closed)
+            window.close();
+    }
+
+    window.clear();
+    window.draw(shape);
+    window.display();
+}
+ */
