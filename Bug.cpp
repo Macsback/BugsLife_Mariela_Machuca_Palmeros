@@ -123,7 +123,7 @@ void Bug::eat(Bug *bug2) {
     if(bug2->isAlive()){
         //cout<< "Compare alive: Works!"<< endl;
         int bug1Size = getSize();
-        int bug2Size = 3;
+        int bug2Size = bug2->getSize();
         if(bug1Size > bug2Size){
             bug2->Death();
            // if(!bug2->isAlive()){
